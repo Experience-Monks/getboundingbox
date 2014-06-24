@@ -1,0 +1,24 @@
+{
+  "name": "getboundingbox",
+  "version": "0.0.0",
+  "description": "This is a utility function to calculate the bounding box of series of 2D points",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/getboundingbox.git"
+  },
+  "keywords": [
+    "bounding",
+    "box",
+    "2d"
+  ],
+  "author": "Matt DesLauriers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jam3/getboundingbox/issues"
+  },
+  "homepage": "https://github.com/Jam3/getboundingbox"
+}
