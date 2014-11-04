@@ -1,15 +1,13 @@
 module.exports = function( path, box, xKey, yKey ) {
-
-    xKey = xKey || 0;
-    yKey = yKey || 1;
-
-    if (!box)
+    xKey = typeof xKey === 'string' ? xKey : 0;
+    yKey = typeof yKey === 'string' ? yKey : 1;
+    if (!box || typeof box === 'number')
         box = {};
 
-    box.minX = Number.MAX_VALUE;
-    box.minY = Number.MAX_VALUE;
-    box.maxX = Number.MIN_VALUE;
-    box.maxY = Number.MIN_VALUE;
+    box.minX = Infinity;
+    box.minY = Infinity;
+    box.maxX = -Infinity;
+    box.maxY = -Infinity;
 
     for (var i=0; i<path.length; i++) {
         var x = path[i][ xKey ],
@@ -19,6 +17,8 @@ module.exports = function( path, box, xKey, yKey ) {
         box.maxX = Math.max( box.maxX, x );
         box.maxY = Math.max( box.maxY, y );
     }
-
+    
+    if (path.length === 0) 
+        box.minX = box.maxX = box.minY = box.maxY = 0
     return box;
 };
